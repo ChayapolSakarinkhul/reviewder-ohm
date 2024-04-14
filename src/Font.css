@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'Poppins-Medium';
+  src: url('./fonts/Poppins-Medium.ttf') format('truetype'); /* Adjust the path based on your directory structure */
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins-Regfular';
+  src: url('./fonts/Poppins-Regular.ttf') format('truetype'); /* Adjust the path based on your directory structure */
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url('./fonts/Poppins-ExtraBold.ttf') format('truetype'); /* Adjust the path based on your directory structure */
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins-Light';
+  src: url('./fonts/Poppins-Light.ttf') format('truetype'); /* Adjust the path based on your directory structure */
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins-Thin';
+  src: url('./fonts/Poppins-Thin.ttf') format('truetype'); /* Adjust the path based on your directory structure */
+  font-weight: 500;
+  font-style: normal;
+}
+
+@media screen and (min-width: 414px) { /* iPhone 13 width */
+  body {
+    font-size: 16px; /* Adjust font size for larger screens */
+    margin:0px;
+  }
+  
+  header {
+    padding: 0px;
+    padding-top:20px;
+    max-width: 100%; /* Adjust maximum width for larger screens */
+    margin: 0 auto; /* Center the header horizontally */
+  }
+
+  ul {
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 800px; /* Adjust maximum width for larger screens */
+    margin: 0 auto; /* Center the navigation horizontally */
+  }
+
+  .attraction-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Show 2 columns on larger screens */
+    gap: 20px;
+    max-width: 100%; /* Adjust maximum width for larger screens */
+    margin: 0 auto; /* Center the attraction list horizontally */
+  }
+
+  .attraction-card {
+    width: 100%; /* Make sure cards take full width */
+  }
+
+  footer {
+    padding: 20px;
+    max-width: 80%; /* Adjust maximum width for larger screens */
+    margin: 0 auto; /* Center the footer horizontally */
+    margin-top:-40px;
+  }
+ 
+}

@@ -1,0 +1,111 @@
+.ReviewerStatus {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin-top: 15vh;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 125px;
+    width: 95vw;
+    max-width: 400px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    align-items: center;
+    z-index: 2;
+    box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.Status {
+    display: flex;
+    height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+    background-color: #f6f6f6;
+    background: transparent;
+}
+
+.Description {
+    display: flex;
+    height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+}
+
+.NormalText {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-inline: 2.5px;
+    color: rgb(0, 0, 0);
+}
+
+.BlueText {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-inline: 2.5px;
+    color: #4AB1E8;
+}
+
+.DefaultMotorcycle {
+    width: 30px;
+    height: 30px;
+    margin-block: 15px;
+}
+
+.BlueMotorcycle {
+    width: 30px;
+    height: 30px;
+    margin-block: 15px;
+}
+
+.DefaultDestination {
+    width: 20px;
+    height: 20px;
+    margin-block: 20px;
+}
+
+.BlueDestination {
+    width: 20px;
+    height: 20px;
+    margin-block: 20px;
+}
+
+.DefaultCamera {
+    width: 21px;
+    height: 21px;
+    margin-block: 20px;
+    margin-inline: 2.5px;
+}
+
+.BlueCamera {
+    width: 21px;
+    height: 21px;
+    margin-block: 20px;
+    margin-inline: 2.5px;
+}
+
+.DefaultConfirm {
+    width: 22.5px;
+    height: 22.5px;
+    margin-block: 19px;
+}
+
+.BlueConfirm {
+    width: 22.5px;
+    height: 22.5px;
+    margin-block: 19px;
+}
+
+.DefaultLine {
+    width: 40px;
+    height: 30px;
+    margin-block: 15px;
+    margin-inline: 8px;
+}
+
+.BlueLine {
+    width: 40px;
+    height: 30px;
+    margin-block: 15px;
+    margin-inline: 8px;
+}
