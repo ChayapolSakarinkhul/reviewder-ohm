@@ -19,16 +19,25 @@ function Status() {
         navigate("/Chat");
     };
 
-    const handleNavigateToList = () => {
-        navigate("/");
+    // const handleNavigateToList = () => {
+    //     navigate("/");
+    // };
+
+    const handleSignOut = async () => {
+        try {
+            await signOut(auth); 
+            navigate("/");
+        } catch (error) {
+            console.error("Sign-out error:", error);
+        }
     };
 
     return (
         <div className="status-container">
             <div className='upper'>
                 <img src={Map} className='map' alt="Map" />
-                <div className="center-container">
-                    <button className="SignoutButton" onClick={handleNavigateToList}>
+                <div>
+                    <button className="SignoutButton" onClick={handleSignOut}>
                         <img src={SignOut} className="BackIcon" alt="SignOut" />
                     </button>
                 </div>

@@ -41,6 +41,13 @@
     margin-top: 2px;
 }
 
+.SignoutIcon {
+    width: 20px;
+    height: 20px;
+    filter: invert();
+    margin-top: 2px;
+}
+
 .lower {
     position: fixed;
     bottom: 2vh;
@@ -70,5 +77,3 @@
     text-decoration: none;
     cursor: pointer;
 }
-
-/* Add any additional styling as needed */
