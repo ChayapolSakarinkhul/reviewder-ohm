@@ -12,7 +12,7 @@ const SignIn = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user) {
+    if (user != null ) {
       navigate("/status");
     }
   }, [user, navigate]);

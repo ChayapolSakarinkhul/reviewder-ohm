@@ -22,6 +22,30 @@
     margin-inline: 10px;
 }
 
+.FlipButton {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    left: 94vw;
+    width: 75px;
+    height: 30px;
+    padding: 5px 5px;
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #4AB1E8;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-inline: 10px;
+}
+
 .BackButton:hover {
     background-color: #3d92c0;
 }
@@ -40,6 +64,21 @@
     object-fit: cover;
     border: 5px solid #4ab1e8c0;
     border-radius: 25px;
+}
+
+.CameraIcon {
+    width: 20px;
+    height: 20px;
+    filter: invert();
+    margin-top: 2px;
+    margin-right: 2px;
+}
+
+.FlipIcon {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    margin-right: 2px;
 }
 
 .ShutterButton {
