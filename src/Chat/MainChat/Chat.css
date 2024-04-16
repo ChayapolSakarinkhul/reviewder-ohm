@@ -133,11 +133,11 @@ html, body, #root {
     background-color: #f6f6f6;
     flex-grow: 1;
     z-index: 1;
-    height: calc(100vh - 12vh);
+    height: calc(100vh - 5vh);
 }
 
 .Body .chat-box {
-    padding-top: 17vh;
+    padding-top: 18vh;
     padding-bottom: 5vh;
 }
 
