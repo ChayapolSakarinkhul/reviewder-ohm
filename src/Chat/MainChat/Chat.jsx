@@ -136,7 +136,7 @@ function Chat({ downloadURL, clearDownloadURL }) {
                     <img src={Reviewer} className="LargeProfileImage" alt="Profile" />
                     <div className="VStack">
                         <div className="TextInfo">
-                            <h2 className="Text"> Tawin Sriprasert </h2>
+                            <h3 className="Text"> Tawin Sriprasert </h3>
                         </div>
                         <div className="Status">
                             <img src={Destination} className="DestinationPin" alt="Destination" />
