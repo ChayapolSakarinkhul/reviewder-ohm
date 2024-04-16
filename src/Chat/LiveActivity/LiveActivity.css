@@ -8,7 +8,7 @@
     transform: translateX(-50%);
     height: 125px;
     width: 95vw;
-    max-width: 400px;
+    max-width: 375px;
     border-radius: 25px;
     background-color: #ffffff;
     align-items: center;
@@ -29,7 +29,7 @@
 .Description {
     display: flex;
     height: 30px;
-    font-size: 16px;
+    font-size: 14px;
     padding-left: 20px;
     padding-right: 20px;
     justify-content: center;
