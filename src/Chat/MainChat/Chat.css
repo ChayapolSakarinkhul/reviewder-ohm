@@ -133,12 +133,12 @@ html, body, #root {
     background-color: #f6f6f6;
     flex-grow: 1;
     z-index: 1;
-    height: calc(100vh - 7vh);
+    height: calc(100vh - 10vh);
 }
 
 .Body .chat-box {
-    padding-top: 35vh;
-    padding-bottom: 2vh;
+    padding-top: 10vh;
+    padding-bottom: 1vh;
 }
 
 .Body::-webkit-scrollbar {
