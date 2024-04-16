@@ -49,9 +49,10 @@ function Status() {
                         </div>
                     </div>
                 </div>
-                <ReviewerStatus />
-
-                <div className="center-container">
+                <div className='StatusHolder'>
+                    <ReviewerStatus />
+                </div>
+                <div>
                     <button onClick={handleNavigateToChat} className="ActionButton" type="button">
                         Chat
                     </button>

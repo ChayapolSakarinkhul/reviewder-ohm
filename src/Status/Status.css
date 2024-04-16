@@ -72,6 +72,10 @@
     margin-top: 10px;
 }
 
+.StatusHolder {
+    padding-bottom: 120px;
+}
+
 .ActionButton {
     padding: 10px 20px;
     font-size: 18px;

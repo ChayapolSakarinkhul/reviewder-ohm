@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    margin-top: 10vh;
     left: 50%;
     transform: translateX(-50%);
     width: 95vw;

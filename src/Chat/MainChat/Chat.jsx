@@ -147,7 +147,9 @@ function Chat({ downloadURL, clearDownloadURL }) {
             </div>
 
             {/* Reviewer Status */}
-            <ReviewerStatus PlaceName={PlaceName} />
+            <div className="LiveActivityHolder">
+                <ReviewerStatus PlaceName={PlaceName} />
+            </div>
 
             {/* Chat body */}
             <div className="Body">
