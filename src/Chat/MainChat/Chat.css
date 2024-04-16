@@ -128,7 +128,9 @@ html, body, #root {
 }
 
 .LiveActivityHolder {
-    margin-top: 10vh;
+    position: fixed;
+    top: 10vh;
+    z-index: 2;
 }
 
 .Body {
