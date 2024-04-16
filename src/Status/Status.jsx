@@ -13,19 +13,15 @@ import ReviewerStatus from '../Chat/LiveActivity/LiveActivity';
 
 function Status() {
     const navigate = useNavigate();
-    const PlaceName = "Tha Phae Walking Street"
+    const PlaceName = "Tha Phae Walking Street";
 
     const handleNavigateToChat = () => {
         navigate("/Chat");
     };
 
-    // const handleNavigateToList = () => {
-    //     navigate("/");
-    // };
-
     const handleSignOut = async () => {
         try {
-            await signOut(auth); 
+            await signOut(auth);
             navigate("/");
         } catch (error) {
             console.error("Sign-out error:", error);
@@ -34,28 +30,27 @@ function Status() {
 
     return (
         <div className="status-container">
-            <div className='upper'>
-                <img src={Map} className='map' alt="Map" />
-                <div>
-                    <button className="SignoutButton" onClick={handleSignOut}>
-                        <img src={SignOut} className="BackIcon" alt="SignOut" />
-                    </button>
-                </div>
+            <div className="upper">
+                <img src={Map} className="map" alt="Map" />
+                <button className="SignoutButton" onClick={handleSignOut}>
+                    <img src={SignOut} className="BackIcon" alt="SignOut" />
+                </button>
             </div>
-            <div className='lower'>
-                <div className="ChatInfo">
+            <div className="lower">
+                <div className="ReviewerInfo">
                     <img src={Reviewer} className="LargeProfileImage" alt="Profile" />
                     <div className="VStack">
                         <div className="TextInfo">
-                            <h2 className="Text"> Tawin Sriprasert </h2>
+                            <h2 className="Text">Tawin Sriprasert</h2>
                         </div>
-                        <div className="Status">
+                        <div className="HStack">
                             <img src={Destination} className="DestinationPin" alt="Destination" />
-                            <p className="Text"> {PlaceName} </p>
+                            <p className="Text">{PlaceName}</p>
                         </div>
                     </div>
                 </div>
                 <ReviewerStatus />
+
                 <div className="center-container">
                     <button onClick={handleNavigateToChat} className="ActionButton" type="button">
                         Chat

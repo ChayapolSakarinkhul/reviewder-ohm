@@ -3,10 +3,8 @@
     flex-direction: column;
     position: fixed;
     margin-top: 10vh;
-    width: 100%;
     left: 50%;
     transform: translateX(-50%);
-    height: 125px;
     width: 95vw;
     max-width: 375px;
     border-radius: 25px;
@@ -14,6 +12,36 @@
     align-items: center;
     z-index: 2;
     box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: height 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.ReviewerStatus.minimized {
+    height: 50px;
+    justify-content: center;
+}
+
+.ReviewerStatus.maximized {
+    height: 125px;
+    justify-content: flex-start;
+}
+
+.ReviewerStatus .Status,
+.ReviewerStatus .Description {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    transition-delay: 0.3s; /* Delay for smoother transition */
+}
+
+.ReviewerStatus.maximized .Status,
+.ReviewerStatus.maximized .Description {
+    opacity: 1;
+}
+
+/* No opacity transition for icons */
+.ReviewerStatus .IconStatus {
+    display: flex;
 }
 
 .Status {
@@ -21,13 +49,8 @@
     height: 30px;
     padding-inline: 20px;
     justify-content: center;
-    background-color: #f6f6f6;
     background: transparent;
-}
-
-.IconStatus {
-    display: flex;
-    flex-direction: row;
+    opacity: 0;
 }
 
 .Description {
@@ -36,51 +59,52 @@
     font-size: 14px;
     padding-inline: 20px;
     justify-content: center;
+    opacity: 0;
+}
+
+/* Styling for text classes */
+.NormalText,
+.BlueText {
+    padding-inline: 2.5px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .NormalText {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding-inline: 2.5px;
     color: rgb(0, 0, 0);
 }
 
 .BlueText {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding-inline: 2.5px;
-    color: #4AB1E8;
+    color: #4ab1e8;
 }
 
-.DefaultMotorcycle {
-    width: 30px;
-    height: 30px;
+/* Icon styling */
+.DefaultMotorcycle,
+.BlueMotorcycle,
+.DefaultDestination,
+.BlueDestination,
+.DefaultCamera,
+.BlueCamera,
+.DefaultConfirm,
+.BlueConfirm,
+.DefaultLine,
+.BlueLine {
     margin-block: 15px;
 }
 
+.DefaultMotorcycle,
 .BlueMotorcycle {
     width: 30px;
     height: 30px;
-    margin-block: 15px;
 }
 
-.DefaultDestination {
-    width: 20px;
-    height: 20px;
-    margin-block: 20px;
-}
-
+.DefaultDestination,
 .BlueDestination {
     width: 20px;
     height: 20px;
     margin-block: 20px;
 }
 
-.DefaultCamera {
-    width: 21px;
-    height: 21px;
-    margin-block: 20px;
-    margin-inline: 2.5px;
-}
-
+.DefaultCamera,
 .BlueCamera {
     width: 21px;
     height: 21px;
@@ -88,25 +112,14 @@
     margin-inline: 2.5px;
 }
 
-.DefaultConfirm {
-    width: 22.5px;
-    height: 22.5px;
-    margin-block: 19px;
-}
-
+.DefaultConfirm,
 .BlueConfirm {
     width: 22.5px;
     height: 22.5px;
     margin-block: 19px;
 }
 
-.DefaultLine {
-    width: 40px;
-    height: 30px;
-    margin-block: 15px;
-    margin-inline: 8px;
-}
-
+.DefaultLine,
 .BlueLine {
     width: 40px;
     height: 30px;

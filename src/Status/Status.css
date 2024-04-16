@@ -31,7 +31,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1; /* Ensure it's above other elements */
+    z-index: 1;
 }
 
 .BackIcon {
@@ -53,27 +53,34 @@
     bottom: 2vh;
     left: 50%;
     transform: translateX(-50%);
-    width: 450px;
-    height: 45vh;
+    width: 500px;
+    height: 285px;
     background-color: rgba(255, 255, 255, 1);
     border-radius: 25px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     z-index: 1;
-}   
+}
+
+.ReviewerInfo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+}
 
 .ActionButton {
     padding: 10px 20px;
-    margin-bottom: 200px;
     font-size: 18px;
+    margin-bottom: 10px;
     font-weight: bold;
     background-color: #4AB1E8;
     border: none;
     border-radius: 25px;
     color: white;
     text-align: center;
-    text-decoration: none;
     cursor: pointer;
 }

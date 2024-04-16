@@ -1,25 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../Firebase/firebase';
-import "./LiveActivity.css"
-
-import ServerProfile from "../../Assets/Logo.png";
-import Receipt from "../../Assets/Receipt.png";
-import BlueMotorcycle from "../../Assets/BlueMotorcycle.png";
-import Destination from "../../Assets/Destination.png";
-import BlueDestination from "../../Assets/BlueDestination.png";
-import Camera from "../../Assets/Camera.png";
-import BlueCamera from "../../Assets/BlueCamera.png";
-import Confirm from "../../Assets/Confirm.png";
-import BlueConfirm from "../../Assets/BlueConfirm.png";
-import Line from "../../Assets/Line.png";
-import BlueLine from "../../Assets/BlueLine.png";
+import './LiveActivity.css';
+import ServerProfile from '../../Assets/Logo.png';
+import Receipt from '../../Assets/Receipt.png';
+import BlueMotorcycle from '../../Assets/BlueMotorcycle.png';
+import Destination from '../../Assets/Destination.png';
+import BlueDestination from '../../Assets/BlueDestination.png';
+import Camera from '../../Assets/Camera.png';
+import BlueCamera from '../../Assets/BlueCamera.png';
+import Confirm from '../../Assets/Confirm.png';
+import BlueConfirm from '../../Assets/BlueConfirm.png';
+import Line from '../../Assets/Line.png';
+import BlueLine from '../../Assets/BlueLine.png';
 
 function ReviewerStatus() {
     const [status, setStatus] = useState(1);
-    const PlaceName = "Wat Phra That Doi Suthep";
+    // Set the default state to maximized by setting `isMinimized` to `false`
+    const [isMinimized, setIsMinimized] = useState(false);
+    const PlaceName = 'Wat Phra That Doi Suthep';
     const Delay = 7.5;
 
+    // Function to send the receipt image
     const sendReceiptImage = async () => {
         const serverAccount = {
             uid: 'server',
@@ -27,7 +29,7 @@ function ReviewerStatus() {
             avatar: ServerProfile,
         };
         const receiptImageUrl = Receipt;
-        
+
         try {
             await addDoc(collection(db, 'messages'), {
                 text: 'Receipt Image',
@@ -41,7 +43,8 @@ function ReviewerStatus() {
             console.error('Error sending receipt image:', error);
         }
     };
-    
+
+    // Timer to cycle through status changes every 7.5 seconds
     useEffect(() => {
         const timer = setInterval(() => {
             setStatus((prevStatus) => (prevStatus % 7) + 1);
@@ -50,13 +53,24 @@ function ReviewerStatus() {
         return () => clearInterval(timer);
     }, []);
 
+    // Trigger the receipt image send on status 7
     useEffect(() => {
         if (status === 7) {
             sendReceiptImage();
         }
     }, [status]);
 
+    // Toggle the minimized/maximized state
+    const handleLiveActivityClick = () => {
+        setIsMinimized(!isMinimized);
+    };
+
+    // Return status content based on current state and status
     const renderStatusContent = () => {
+        if (isMinimized) {
+            return null;
+        }
+
         switch (status) {
             case 1:
                 return (
@@ -83,7 +97,7 @@ function ReviewerStatus() {
                 return (
                     <div className="Status">
                         <h3 className="BlueText">STARTING</h3>
-                        <h3 className="NormalText">the session</h3>
+                        <h3 class="NormalText">the session</h3>
                     </div>
                 );
             case 5:
@@ -112,7 +126,12 @@ function ReviewerStatus() {
         }
     };
 
+    // Return description content based on current state and status
     const renderDescriptionContent = () => {
+        if (isMinimized) {
+            return null;
+        }
+
         switch (status) {
             case 1:
                 return (
@@ -161,6 +180,7 @@ function ReviewerStatus() {
         }
     };
 
+    // Return icon content based on current state and status
     const renderIconContent = () => {
         switch (status) {
             case 1:
@@ -244,7 +264,7 @@ function ReviewerStatus() {
                         <img src={BlueLine} className="BlueLine" alt="Line" />
                         <img src={BlueCamera} className="BlueCamera" alt="Camera" />
                         <img src={BlueLine} className="BlueLine" alt="Line" />
-                        <img src={BlueConfirm} className="BlueConfirm" alt="BlueConfirm" />
+                        <img src={BlueConfirm} className="BlueConfirm" alt="Confirm" />
                     </div>
                 );
             default:
@@ -253,7 +273,10 @@ function ReviewerStatus() {
     };
 
     return (
-        <div className="ReviewerStatus">
+        <div
+            className={`ReviewerStatus ${isMinimized ? 'minimized' : 'maximized'}`}
+            onClick={handleLiveActivityClick}
+        >
             {renderStatusContent()}
             {renderDescriptionContent()}
             {renderIconContent()}
