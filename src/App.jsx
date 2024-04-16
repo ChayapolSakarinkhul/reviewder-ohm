@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Chat from './Chat/MainChat/Chat.jsx';
 import Signin from './SignIn/SignIn.jsx';
-import Status from './Status/Status.jsx';
+import Status from './Status/MainStatus/Status.jsx';
 import Cam from './Chat/Camera/Capture.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 

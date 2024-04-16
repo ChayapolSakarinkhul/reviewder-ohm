@@ -14,23 +14,26 @@
     cursor: pointer;
     transition: height 0.5s ease-in-out;
     overflow: hidden;
+    outline: none;
 }
 
 .ReviewerStatus.minimized {
     height: 50px;
     justify-content: center;
+    outline: none;
 }
 
 .ReviewerStatus.maximized {
     height: 125px;
     justify-content: flex-start;
+    outline: none;
 }
 
 .ReviewerStatus .Status,
 .ReviewerStatus .Description {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    transition-delay: 0.3s; /* Delay for smoother transition */
+    transition-delay: 0.3s;
 }
 
 .ReviewerStatus.maximized .Status,
@@ -38,7 +41,6 @@
     opacity: 1;
 }
 
-/* No opacity transition for icons */
 .ReviewerStatus .IconStatus {
     display: flex;
 }

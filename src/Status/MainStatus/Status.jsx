@@ -1,15 +1,15 @@
 import React from 'react';
-import { auth } from "../Firebase/firebase";
+import { auth } from "../../Firebase/firebase";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-import Reviewer from "./../Assets/Reviewer.jpg";
-import Destination from "./../Assets/Destination.png";
-import Map from "./../Assets/Map(Maya-Thapae).png";
-import SignOut from "./../Assets/Sign-out.png";
+import Reviewer from "../../Assets/Reviewer.jpg";
+import Destination from "../../Assets/Destination.png";
+import Map from "../../Assets/Map(Maya-Thapae).png";
+import SignOut from "../../Assets/Sign-out.png";
 import "./Status.css";
 
-import ReviewerStatus from '../Chat/LiveActivity/LiveActivity';
+import ReviewerStatus from '../../Chat/LiveActivity/LiveActivity';
 
 function Status() {
     const navigate = useNavigate();
