@@ -137,8 +137,8 @@ html, body, #root {
 }
 
 .Body .chat-box {
-    padding-top: 10vh;
-    padding-bottom: 1vh;
+    padding-top: 15vh;
+    padding-bottom: 5vh;
 }
 
 .Body::-webkit-scrollbar {
