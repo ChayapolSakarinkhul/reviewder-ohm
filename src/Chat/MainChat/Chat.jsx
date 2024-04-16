@@ -25,7 +25,6 @@ function Chat({ downloadURL, clearDownloadURL }) {
     const [selectedFile, setSelectedFile] = useState(null);
     const PlaceName = "Tha Phae Walking Street";
 
-    // Firebase setup and message fetching useEffect
     useEffect(() => {
         const q = query(collection(db, "messages"), orderBy("createdAt", "desc"), limit(50));
         const unsubscribe = onSnapshot(q, (QuerySnapshot) => {

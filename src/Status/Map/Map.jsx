@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { GoogleMap, useJsApiLoader, DirectionsService, DirectionsRenderer, Marker } from '@react-google-maps/api';
-import { ref,set } from 'firebase/database'
-import database from './firebase';
+import { GoogleMap, useJsApiLoader, DirectionsRenderer, Marker } from '@react-google-maps/api';
+import { ref,set } from 'firebase/database';
+import { database } from '../../Firebase/firebase';
+
 const App = () => {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_API_KEY,
