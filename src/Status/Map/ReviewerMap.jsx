@@ -6,7 +6,7 @@ import { database } from '../../Firebase/firebase';
 const App = () => {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_API_KEY,
-  });
+});
 
   const [position, setPosition] = useState(null);
   const [directions, setDirections] = useState(null);

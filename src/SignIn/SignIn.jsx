@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { auth } from "../Firebase/firebase.jsx";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { GoogleAuthProvider, signInWithRedirect, signOut } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import "./SignIn.css";
 
@@ -19,7 +19,7 @@ const SignIn = () => {
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
-    signInWithRedirect(auth, provider)
+    signInWithPopup(auth, provider)
       .catch(error => {
         console.error("Error signing in with Google:", error);
         alert(`Error signing in with Google. Please try again later.`);
