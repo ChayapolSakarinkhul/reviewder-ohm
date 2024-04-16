@@ -142,7 +142,7 @@ html, body, #root {
 
 .Body .chat-box {
     padding-top: 18vh;
-    padding-bottom: 8vh;
+    padding-bottom: 10vh;
 }
 
 .Body::-webkit-scrollbar {
