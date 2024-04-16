@@ -138,9 +138,9 @@ function Chat({ downloadURL, clearDownloadURL }) {
                         <div className="TextInfo">
                             <h3 className="Text"> Tawin Sriprasert </h3>
                         </div>
-                        <div className="Status">
+                        <div className="InLine">
                             <img src={Destination} className="DestinationPin" alt="Destination" />
-                            <p className="Text"> {PlaceName} </p>
+                            <p className="DestinationText"> {PlaceName} </p>
                         </div>
                     </div>
                 </div>

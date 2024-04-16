@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    margin-top: 15vh;
+    margin-top: 7.5vh;
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -19,19 +19,22 @@
 .Status {
     display: flex;
     height: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-inline: 20px;
     justify-content: center;
     background-color: #f6f6f6;
     background: transparent;
+}
+
+.IconStatus {
+    display: flex;
+    flex-direction: row;
 }
 
 .Description {
     display: flex;
     height: 30px;
     font-size: 14px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-inline: 20px;
     justify-content: center;
 }
 
