@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, useJsApiLoader, DirectionsRenderer, Marker } from '@react-google-maps/api';
-import { ref,onValue } from 'firebase/database'
+import { ref, onValue } from 'firebase/database';
 import { database } from '../../Firebase/firebase';
-const App = () => {
+
+const UserMap = ({ setDistance, setDuration }) => {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_API_KEY,
   });
 
   const [driverLocation, setDriverLocation] = useState(null);
   const [directions, setDirections] = useState(null);
-  const [distance, setDistance] = useState(null);
-  const [duration, setDuration] = useState(null);
   const [directionsFetched, setDirectionsFetched] = useState(false);
+
   useEffect(() => {
     const driverRef = ref(database, 'drivers/driver1');
   
@@ -36,41 +36,36 @@ const App = () => {
     if (isLoaded && driverLocation && !directionsFetched) {
       const fetchDirections = () => {
         const directionsService = new window.google.maps.DirectionsService();
-        directionsService.route(
-          {
-            origin: driverLocation,
-            destination: { lat: 18.7602084, lng: 99.0035027 },
-            travelMode: 'DRIVING',
-          },
-          (result, status) => {
-            if (status === 'OK') {
-              setDirections(result);
-              const route = result.routes[0];
-              const leg = route.legs[0];
-              setDistance(leg.distance.text);
-              setDuration(leg.duration.text);
-              setDirectionsFetched(true);
-            } else {
-              console.error(`Directions request failed: ${status}`);
+          directionsService.route(
+            {
+              origin: driverLocation,
+              destination: { lat: 18.7602084, lng: 99.0035027 },
+              travelMode: 'DRIVING',
+            },
+            (result, status) => {
+              if (status === 'OK') {
+                  setDirections(result);
+                  const route = result.routes[0];
+                  const leg = route.legs[0];
+                  setDistance(leg.distance.text);
+                  setDuration(leg.duration.text);
+                  setDirectionsFetched(true);
+              } else {
+                  console.error(`Directions request failed: ${status}`);
+              }
             }
-          }
-        );
+          );
       };
-  
-      fetchDirections(); // Fetch directions initially
-  
-      const intervalId = setInterval(fetchDirections, 7000); // Fetch directions every 7 seconds
-  
-      // Clean up interval
+      fetchDirections();
+      const intervalId = setInterval(fetchDirections, 7000);
       return () => clearInterval(intervalId);
     }
-  }, [isLoaded, driverLocation, directionsFetched]);
+  }, [isLoaded, driverLocation, directionsFetched, setDistance, setDuration]);
   
-
   return isLoaded ? (
     <div>
       <GoogleMap
-        mapContainerStyle={{ width: '100%', height: '80vh' }}
+        mapContainerStyle={{ width: '100%', height: '100vh' }}
         defaultCenter={driverLocation}
         zoom={15}
       >
@@ -87,13 +82,6 @@ const App = () => {
           />
         )}
       </GoogleMap>
-
-      {directions && (
-        <div>
-          <p>Distance: {distance}</p>
-          <p>Duration: {duration}</p>
-        </div>
-      )}
     </div>
   ) : (
     <div>
@@ -102,4 +90,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default UserMap;

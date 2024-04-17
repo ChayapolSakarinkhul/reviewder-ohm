@@ -10,8 +10,6 @@ const App = () => {
 
   const [position, setPosition] = useState(null);
   const [directions, setDirections] = useState(null);
-  const [distance, setDistance] = useState(null);
-  const [duration, setDuration] = useState(null);
   const [directionsFetched, setDirectionsFetched] = useState(false);
   useEffect(() => {
     const options = {
@@ -61,10 +59,6 @@ const App = () => {
           (result, status) => {
             if (status === 'OK') {
               setDirections(result);
-              const route = result.routes[0];
-              const leg = route.legs[0];
-              setDistance(leg.distance.text);
-              setDuration(leg.duration.text);
               setDirectionsFetched(true);
             } else {
               console.error(`Directions request failed: ${status}`);
@@ -102,13 +96,6 @@ const App = () => {
           />
         )}
       </GoogleMap>
-
-      {directions && (
-        <div>
-          <p>Distance: {distance}</p>
-          <p>Duration: {duration}</p>
-        </div>
-      )}
     </div>
   ) : (
     <div>

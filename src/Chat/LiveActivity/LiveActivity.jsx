@@ -14,14 +14,12 @@ import BlueConfirm from '../../Assets/BlueConfirm.png';
 import Line from '../../Assets/Line.png';
 import BlueLine from '../../Assets/BlueLine.png';
 
-function ReviewerStatus() {
+function LiveActivity({ distance, duration }) {
     const [status, setStatus] = useState(1);
-    // Set the default state to maximized by setting `isMinimized` to `false`
     const [isMinimized, setIsMinimized] = useState(false);
     const PlaceName = 'Wat Phra That Doi Suthep';
     const Delay = 7.5;
 
-    // Function to send the receipt image
     const sendReceiptImage = async () => {
         const serverAccount = {
             uid: 'server',
@@ -44,7 +42,6 @@ function ReviewerStatus() {
         }
     };
 
-    // Timer to cycle through status changes every 7.5 seconds
     useEffect(() => {
         const timer = setInterval(() => {
             setStatus((prevStatus) => (prevStatus % 7) + 1);
@@ -53,19 +50,16 @@ function ReviewerStatus() {
         return () => clearInterval(timer);
     }, []);
 
-    // Trigger the receipt image send on status 7
     useEffect(() => {
         if (status === 7) {
             sendReceiptImage();
         }
     }, [status]);
 
-    // Toggle the minimized/maximized state
     const handleLiveActivityClick = () => {
         setIsMinimized(!isMinimized);
     };
 
-    // Return status content based on current state and status
     const renderStatusContent = () => {
         if (isMinimized) {
             return null;
@@ -83,7 +77,7 @@ function ReviewerStatus() {
                 return (
                     <div className="Status">
                         <h3 className="NormalText">Arriving in</h3>
-                        <h3 className="BlueText">8 mins (11.4 Km)</h3>
+                        <h3 className="BlueText">{duration} ({distance})</h3>
                     </div>
                 );
             case 3:
@@ -126,7 +120,6 @@ function ReviewerStatus() {
         }
     };
 
-    // Return description content based on current state and status
     const renderDescriptionContent = () => {
         if (isMinimized) {
             return null;
@@ -284,4 +277,4 @@ function ReviewerStatus() {
     );
 }
 
-export default ReviewerStatus;
+export default LiveActivity;

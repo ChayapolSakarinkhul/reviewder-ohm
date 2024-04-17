@@ -5,7 +5,7 @@ import { auth, db, storage } from "../../Firebase/firebase";
 import { useNavigate } from "react-router-dom";
 
 import Message from "../Message/Message";
-import ReviewerStatus from "../LiveActivity/LiveActivity";
+import LiveActivity from "../LiveActivity/LiveActivity";
 import "./Chat.css";
 
 import Destination from "../../Assets/Destination.png";
@@ -15,7 +15,7 @@ import Send from "../../Assets/Send.png";
 import SignOut from "../../Assets/Sign-out.png";
 import Reviewer from "../../Assets/Reviewer.jpg";
 
-function Chat({ downloadURL, clearDownloadURL }) {
+function Chat({ downloadURL, clearDownloadURL, distance, duration}) {
     const [messages, setMessages] = useState([]);
     const scroll = useRef();
     const [message, setMessage] = useState("");
@@ -147,7 +147,7 @@ function Chat({ downloadURL, clearDownloadURL }) {
 
             {/* Reviewer Status */}
             <div className="LiveActivityHolder">
-                <ReviewerStatus PlaceName={PlaceName} />
+                <LiveActivity distance={distance} duration={duration} />
             </div>
 
             {/* Chat body */}
